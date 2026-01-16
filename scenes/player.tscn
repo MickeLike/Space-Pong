@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://demkjd8hccns"]
+
+[ext_resource type="Texture2D" uid="uid://cvw3xl62h1mif" path="res://Space-Pong/sprites/Raquete.png" id="1_1mm2n"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3pdlc"]
+radius = 13.0
+height = 130.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1mm2n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_3pdlc")

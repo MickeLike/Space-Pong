@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbjbgvyafljtq"]
+
+[ext_resource type="Texture2D" uid="uid://cj8vq43r6x6s1" path="res://Space-Pong/sprites/Fundo1.png" id="1_2qxvk"]
+[ext_resource type="PackedScene" uid="uid://demkjd8hccns" path="res://Space-Pong/scenes/player.tscn" id="2_45p6n"]
+
+[node name="Game" type="Node2D"]
+metadata/_edit_vertical_guides_ = [540.0]
+metadata/_edit_horizontal_guides_ = [961.0]
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_2qxvk")
+centered = false
+
+[node name="Player" parent="." instance=ExtResource("2_45p6n")]
+position = Vector2(270, 900)
