@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://v65eq3h13iun"]
+
+[ext_resource type="Texture2D" uid="uid://duj61j3qgusms" path="res://Space-Pong/sprites/Bola.png" id="1_1828n"]
+[ext_resource type="Script" uid="uid://diwh0w8g0ev71" path="res://Space-Pong/scripts/ball.gd" id="1_g6at1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g6at1"]
+radius = 17.0
+
+[node name="Ball" type="CharacterBody2D"]
+script = ExtResource("1_g6at1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1828n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_g6at1")
