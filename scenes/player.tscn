@@ -1,12 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://demkjd8hccns"]
+[gd_scene load_steps=4 format=3 uid="uid://demkjd8hccns"]
 
 [ext_resource type="Texture2D" uid="uid://cvw3xl62h1mif" path="res://Space-Pong/sprites/Raquete.png" id="1_1mm2n"]
+[ext_resource type="Script" uid="uid://bkshf1oqyj3aa" path="res://Space-Pong/scenes/player.gd" id="1_3pdlc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3pdlc"]
 radius = 13.0
 height = 130.0
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_3pdlc")
+speed = 350
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_1mm2n")

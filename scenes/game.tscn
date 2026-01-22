@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbjbgvyafljtq"]
+[gd_scene load_steps=6 format=3 uid="uid://cbjbgvyafljtq"]
 
 [ext_resource type="Texture2D" uid="uid://cj8vq43r6x6s1" path="res://Space-Pong/sprites/Fundo1.png" id="1_2qxvk"]
 [ext_resource type="PackedScene" uid="uid://demkjd8hccns" path="res://Space-Pong/scenes/player.tscn" id="2_45p6n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45p6n"]
+size = Vector2(580, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvwap"]
+size = Vector2(20, 981.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffblh"]
+size = Vector2(580, 20)
 
 [node name="Game" type="Node2D"]
 metadata/_edit_vertical_guides_ = [540.0]
@@ -13,3 +22,29 @@ centered = false
 
 [node name="Player" parent="." instance=ExtResource("2_45p6n")]
 position = Vector2(270, 900)
+speed = 400
+
+[node name="TopWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
+position = Vector2(270, -10)
+shape = SubResource("RectangleShape2D_45p6n")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(-10, 488.5)
+shape = SubResource("RectangleShape2D_cvwap")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(550, 489.25)
+shape = SubResource("RectangleShape2D_cvwap")
+
+[node name="Hole" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
+position = Vector2(270, 970)
+shape = SubResource("RectangleShape2D_ffblh")
+debug_color = Color(0.7738946, 0.4250578, 0.3397048, 0.41960785)
